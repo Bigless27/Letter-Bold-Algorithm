@@ -1,0 +1,30 @@
+<header class='flex-container flex-center'>
+    <div class="width-half">
+        <form [formGroup]='stateForm' novalidate>
+            <div class='pos-rel'>
+                <label for="search">
+                    <i class='fa fa-search icon-pos color-indigo'></i>
+                </label>
+                <input id='search' placeholder="Search" (click)="toggleDropDown()" formControlName='search' class=' input-underline search-bar ' type="text">
+                <div clickOutside (clickOutside)="toggleDropDown()" *ngIf='showDropDown' class="state-container-dropdown">
+                    <div>
+                        <div (click)="selectValue(s)" class='state' *ngFor='let s of states | searchFilter: getSearchValue()'>
+                            {{s}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</header>
+<main>
+    <div class='flex-container card-container flex-wrap flex-center '>
+        <div *ngFor='let s of states  | searchFilter: getSearchValue()' class='flex-container card-dimensions card flex-center width-100 color-indigo'>
+            <div class='width-5 '></div>
+            {{s}}
+            <div class='width-5 '></div>
+        </div>
+    </div>
+</main>
+<footer>
+</footer>
