@@ -1,2 +1,7 @@
-# custom-autocomplete
-A custom autocomplete built with angular 4 frame work
+# Letter Bold Algorithm
+A custom built pipe that will bold every letter in the search results that matches the search value!
+
+##Running the application
+* Clone it down
+* `npm i`
+* `npm start`
