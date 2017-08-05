@@ -1,3 +1,4 @@
+import { LetterBoldPipe } from './shared/letter-bold.pipe';
 import { SearchFilterPipe } from './shared/filter-pipe';
 import { ClickOutsideDirective } from './shared/dropdown.directive';
 import { NgModule, ApplicationRef } from '@angular/core';
@@ -8,8 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ApiService } from './shared';
 import { routing } from './app.routing';
-
-
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 @NgModule({
   imports: [
@@ -22,7 +21,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   declarations: [
     AppComponent,
     ClickOutsideDirective,
-    SearchFilterPipe
+    SearchFilterPipe,
+    LetterBoldPipe
   ],
   providers: [
     ApiService

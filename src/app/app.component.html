@@ -8,8 +8,10 @@
                 <input id='search' placeholder="Search" (click)="toggleDropDown()" formControlName='search' class=' input-underline search-bar ' type="text">
                 <div clickOutside (clickOutside)="toggleDropDown()" *ngIf='showDropDown' class="state-container-dropdown">
                     <div>
-                        <div (click)="selectValue(s)" class='state' *ngFor='let s of states | searchFilter: getSearchValue()'>
-                            {{s}}
+                        <div (click)="selectValue(s)" class='state' *ngFor='let s of states |  searchFilter: getSearchValue()'>
+                            <div [innerHTML]="s | letterBold: getSearchValue()">
+                                {{s}}
+                            </div>
                         </div>
                     </div>
                 </div>
